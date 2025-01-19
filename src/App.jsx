@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Description from "./components/Description/Description"
 import Feedback from "./components/Feedback/Feedback"
 import Options from "./components/Options/Options"
@@ -6,11 +6,24 @@ import Notification from "./components/Notification/Notification"
 
 const App = () => {
 
-  const [feedBacks, setFeedBacks] = useState({
+  const [feedBacks, setFeedBacks] = useState(() => {
+
+    const lastFeedBacks = window.localStorage.getItem('lastFeedBacks');
+
+    if (lastFeedBacks !== null) { 
+      return JSON.parse(lastFeedBacks);
+    }
+
+    return {
     good: 0,
     neutral: 0,
     bad: 0
+    }
   })
+
+  useEffect(() => {
+    window.localStorage.setItem("lastFeedBacks", JSON.stringify(feedBacks));
+  }, [feedBacks]);
 
   const handleAddFeedBack = option => {
     if (option === 'good') {
