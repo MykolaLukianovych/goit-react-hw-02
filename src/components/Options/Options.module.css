@@ -1,0 +1,6 @@
+.componentWrapper {
+  display: flex;
+  gap: 5px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}

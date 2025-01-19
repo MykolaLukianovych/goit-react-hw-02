@@ -1,0 +1,9 @@
+.componentWrapper {
+  margin-left: 15px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

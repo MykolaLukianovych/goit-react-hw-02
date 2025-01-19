@@ -1,8 +1,8 @@
-
+import s from "./Options.module.css"
 
 const Options = ({handleAddFeedBack, totalFeedBack, handleResetFeedBack}) => {
   return (
-      <div>
+      <div className={s.componentWrapper}>
         <button onClick={() => handleAddFeedBack('good')}>Good</button>
       <button onClick={() => handleAddFeedBack('neutral')}>Neutral</button>
       <button onClick={() => handleAddFeedBack('bad')}>Bad</button>

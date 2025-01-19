@@ -1,9 +1,9 @@
-
+import s from "./Feedback.module.css"
 
 const Feedback = ({feedBacks, totalFeedBack}) => {
   return (
-      <div>
-    <ul>
+      <div className={s.componentWrapper}>
+    <ul className={s.list}>
         <li>Good: {feedBacks.good}</li>
         <li>Neutral: {feedBacks.neutral}</li>
         <li>Bad: {feedBacks.bad}</li>
