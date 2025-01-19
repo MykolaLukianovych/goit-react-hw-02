@@ -46,12 +46,13 @@ const App = () => {
   }
 
   const totalFeedBack = feedBacks.good + feedBacks.neutral + feedBacks.bad; 
-
+  const positiveFeedback = Math.round((feedBacks.good / totalFeedBack) * 100);
+  
   return (
     <div>
       <Description />
       <Options handleAddFeedBack={handleAddFeedBack} totalFeedBack={totalFeedBack} handleResetFeedBack={ handleResetFeedBack } />
-      {totalFeedBack !== 0 ? <Feedback feedBacks={feedBacks} totalFeedBack={totalFeedBack} /> : <Notification />}
+      {totalFeedBack !== 0 ? <Feedback feedBacks={feedBacks} totalFeedBack={totalFeedBack} positiveFeedback={ positiveFeedback } /> : <Notification />}
     </div>
   )
 }
